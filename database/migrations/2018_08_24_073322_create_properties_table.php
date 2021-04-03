@@ -29,11 +29,11 @@ class CreatePropertiesTable extends Migration
             $table->string('address');
             $table->integer('area');
             $table->integer('agent_id');
-            $table->text('description');
+            $table->text('description')->nullable();
             $table->string('video')->nullable();
             $table->string('floor_plan')->nullable();
-            $table->string('location_latitude');
-            $table->string('location_longitude');
+            $table->string('location_latitude')->nullable();
+            $table->string('location_longitude')->nullable();
             $table->text('nearby')->nullable();
             $table->timestamps();
         });

@@ -815,3 +815,18 @@ li.collection.agent-message {
     margin-top: 95px;
     padding-left: 20px;
 }
+.sidenav-overlay {
+    z-index: 996;
+}
+
+@media only screen and (min-width: 993px) {
+    nav a.logo-on-mobile {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 992px) {
+    nav a.logo-full-screen {
+        display: none;
+    }
+}

@@ -3,7 +3,7 @@
         <div class="container">
             <div class="nav-wrapper">
 
-                <a href="{{ route('home') }}" class="brand-logo">
+                <a href="{{ route('home') }}" class="brand-logo logo-full-screen" style="max-height: 100%">
                     @if(isset($navbarsettings[0]) && $navbarsettings[0]['name'])
                         {{ $navbarsettings[0]['name'] }}
                     @else
@@ -11,6 +11,10 @@
                     @endif
                         <img class="left" src="{{ asset('frontend/images/logo.png') }}" style="width: 60px;">
 {{--                    <i class="material-icons left">location_city</i>--}}
+                </a>
+                <a href="{{ route('home') }}" class="brand-logo logo-on-mobile" style="max-height: 100%">
+                    <img class="left" src="{{ asset('frontend/images/logo.png') }}" style="width: 60px;">
+                    {{--                    <i class="material-icons left">location_city</i>--}}
                 </a>
                 <a href="#" data-target="mobile-demo" class="sidenav-trigger">
                     <i class="material-icons">menu</i>

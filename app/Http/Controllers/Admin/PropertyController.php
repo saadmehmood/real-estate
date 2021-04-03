@@ -50,8 +50,6 @@ class PropertyController extends Controller
             'image'     => 'required|image|mimes:jpeg,jpg,png',
             'floor_plan'=> 'image|mimes:jpeg,jpg,png',
             'description'        => 'required',
-            'location_latitude'  => 'required',
-            'location_longitude' => 'required',
         ]);
 
         $image = $request->file('image');
