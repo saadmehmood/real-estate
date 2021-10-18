@@ -29,9 +29,15 @@ Route::get('/blog/author/{username}', 'PagesController@blogAuthor')->name('blog.
 Route::get('/contact', 'PagesController@contact')->name('contact');
 Route::post('/contact', 'PagesController@messageContact')->name('contact.message');
 
+Route::get('/properties/create', 'PagesController@contact')->name('contact');
+Route::post('/contact', 'PagesController@messageContact')->name('contact.message');
+
 
 Auth::routes();
 
+Route::group(['namespace'=>'Admin', 'middleware'=>['auth'],'as'=>'admin.'], function() {
+    Route::resource('properties','PropertyController');
+});
 Route::group(['prefix'=>'admin','namespace'=>'Admin','middleware'=>['auth','admin'],'as'=>'admin.'], function(){
 
     Route::get('dashboard','DashboardController@index')->name('dashboard');
@@ -39,7 +45,7 @@ Route::group(['prefix'=>'admin','namespace'=>'Admin','middleware'=>['auth','admi
     Route::resource('categories','CategoryController');
     Route::resource('posts','PostController');
     Route::resource('features','FeatureController');
-    Route::resource('properties','PropertyController');
+//    Route::resource('properties','PropertyController');
     Route::post('properties/gallery/delete','PropertyController@galleryImageDelete')->name('gallery-delete');
 
     Route::resource('sliders','SliderController');

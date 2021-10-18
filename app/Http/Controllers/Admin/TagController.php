@@ -6,6 +6,7 @@ use App\Tag;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
+use Illuminate\Support\Str;
 use Toastr;
 
 class TagController extends Controller
@@ -33,7 +34,7 @@ class TagController extends Controller
 
         $tag = new Tag();
         $tag->name = $request->name;
-        $tag->slug = str_slug($request->name);
+        $tag->slug = Str::slug($request->name);
         $tag->save();
 
         Toastr::success('message', 'Tag created successfully.');
@@ -63,7 +64,7 @@ class TagController extends Controller
 
         $tag = Tag::find($id);
         $tag->name = $request->name;
-        $tag->slug = str_slug($request->name);
+        $tag->slug = Str::slug($request->name);
         $tag->save();
 
         Toastr::success('message', 'Tag updated successfully.');

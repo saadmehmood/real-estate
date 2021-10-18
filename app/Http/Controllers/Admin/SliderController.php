@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
 use Intervention\Image\Facades\Image;
 use App\Slider;
 use Carbon\Carbon;
@@ -33,7 +34,7 @@ class SliderController extends Controller
         ]);
 
         $image = $request->file('image');
-        $slug  = str_slug($request->title);
+        $slug  = Str::slug($request->title);
 
         if(isset($image)){
             $currentDate = Carbon::now()->toDateString();
@@ -75,7 +76,7 @@ class SliderController extends Controller
         ]);
 
         $image = $request->file('image'); 
-        $slug  = str_slug($request->title);
+        $slug  = Str::slug($request->title);
         $slider = Slider::find($id);
 
         if(isset($image)){

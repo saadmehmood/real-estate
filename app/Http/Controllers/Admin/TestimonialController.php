@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
 use Intervention\Image\Facades\Image;
 use App\Testimonial;
 use Carbon\Carbon;
@@ -34,7 +35,7 @@ class TestimonialController extends Controller
         ]);
 
         $image = $request->file('image');
-        $slug  = str_slug($request->name);
+        $slug  = Str::slug($request->name);
 
         if(isset($image)){
             $currentDate = Carbon::now()->toDateString();
@@ -77,7 +78,7 @@ class TestimonialController extends Controller
         ]);
 
         $image = $request->file('image'); 
-        $slug  = str_slug($request->title);
+        $slug  = Str::slug($request->title);
         $testimonial = Testimonial::find($id);
 
         if(isset($image)){

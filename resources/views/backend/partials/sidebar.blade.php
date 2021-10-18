@@ -18,7 +18,7 @@
                         <span>Sliders</span>
                     </a>
                 </li>
-                <li class="{{ Request::is('admin/properties*') ? 'active' : '' }}">
+                <li class="{{ (Request::is('admin/properties*') || Request::is('properties*')) ? 'active' : '' }}">
                     <a href="{{ route('admin.properties.index') }}">
                         <i class="material-icons">home</i>
                         <span>Property</span>

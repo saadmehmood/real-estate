@@ -33,62 +33,62 @@
 
                     <div class="form-group form-float">
                         <div class="form-line">
-                            <input type="number" class="form-control" name="price" required>
+                            <input type="number" class="form-control" name="price" required value="{{old('price')}}">
                             <label class="form-label">Price</label>
                         </div>
                     </div>
 
                     <div class="form-group form-float">
                         <div class="form-line">
-                            <input type="number" class="form-control" name="bedroom" required>
+                            <input type="number" class="form-control" name="bedroom" required value="{{old('bedroom')}}">
                             <label class="form-label">Bedroom</label>
                         </div>
                     </div>
 
                     <div class="form-group form-float">
                         <div class="form-line">
-                            <input type="number" class="form-control" name="bathroom" required>
+                            <input type="number" class="form-control" name="bathroom" required value="{{old('bathroom')}}">
                             <label class="form-label">Bathroom</label>
                         </div>
                     </div>
 
                     <div class="form-group form-float">
                         <div class="form-line">
-                            <input type="text" class="form-control" name="city" required>
+                            <input type="text" class="form-control" name="city" required value="{{old('city')}}">
                             <label class="form-label">City</label>
                         </div>
                     </div>
 
                     <div class="form-group form-float">
                         <div class="form-line">
-                            <input type="text" class="form-control" name="address" required>
+                            <input type="text" class="form-control" name="address" required value="{{old('address')}}">
                             <label class="form-label">Address</label>
                         </div>
                     </div>
 
                     <div class="form-group form-float">
                         <div class="form-line">
-                            <input type="number" class="form-control" name="area" required>
+                            <input type="number" class="form-control" name="area" value="{{old('number')}}" required>
                             <label class="form-label">Area</label>
                         </div>
                         <div class="help-info">Square Feet</div>
                     </div>
 
                     <div class="form-group">
-                        <input type="checkbox" id="featured" name="featured" class="filled-in" value="1" />
+                        <input type="checkbox" id="featured" name="featured" class="filled-in" value="1" {{ (is_array(old('featured')) and in_array('1', old('featured'))) ? ' checked' : '' }}>
                         <label for="featured">Featured</label>
                     </div>
 
                     <hr>
                     <div class="form-group">
                         <label for="tinymce">Description</label>
-                        <textarea name="description" id="tinymce">{{old('description')}}</textarea>
+                        <textarea name="description" id="tinymce" class="form-control">{{old('description')}}</textarea>
                     </div>
 
                     <hr>
                     <div class="form-group">
                         <label for="tinymce-nearby">Nearby</label>
-                        <textarea name="nearby" id="tinymce-nearby">{{old('nearby')}}</textarea>
+                        <textarea name="nearby" id="tinymce-nearby" class="form-control">{{old('nearby')}}</textarea>
                     </div>
 
                 </div>
@@ -112,10 +112,10 @@
                     <div class="form-group form-float">
                         <div class="form-line {{$errors->has('purpose') ? 'focused error' : ''}}">
                             <label>Select Purpose</label>
-                            <select name="purpose" class="form-control show-tick">
+                            <select name="purpose" class="form-control show-tick" required>
                                 <option value="">-- Please select --</option>
-                                <option value="sale">Sale</option>
-                                <option value="rent">Rent</option>
+                                <option value="sale" {{ old('purpose') == "sale" ? 'selected' : '' }}>Sale</option>
+                                <option value="rent" {{ old('purpose') == "rent" ? 'selected' : '' }}>Rent</option>
                             </select>
                         </div>
                     </div>
@@ -123,10 +123,10 @@
                     <div class="form-group form-float">
                         <div class="form-line {{$errors->has('type') ? 'focused error' : ''}}">
                             <label>Select type</label>
-                            <select name="type" class="form-control show-tick">
+                            <select name="type" class="form-control show-tick" required>
                                 <option value="">-- Please select --</option>
-                                <option value="house">House</option>
-                                <option value="apartment">Apartment</option>
+                                <option value="house" {{ old('type') == "house" ? 'selected' : '' }}>House</option>
+                                <option value="apartment" {{ old('type') == "apartment" ? 'selected' : '' }}>Apartment</option>
                             </select>
                         </div>
                     </div>
@@ -151,13 +151,13 @@
                         <h5>Google Map</h5>
                         <div class="form-group">
                             <div class="form-line">
-                                <input type="text" name="location_latitude" class="form-control" required/>
+                                <input type="text" name="location_latitude" class="form-control"/>
                                 <label class="form-label">Latitude</label>
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="form-line">
-                                <input type="text" name="location_longitude" class="form-control" required/>
+                                <input type="text" name="location_longitude" class="form-control"/>
                                 <label class="form-label">Longitude</label>
                             </div>
                         </div>
@@ -213,8 +213,8 @@
         $(function () {
             $("#input-id").fileinput();
         });
-        CKEDITOR.replace( 'tinymce' );
-        CKEDITOR.replace( 'tinymce-nearby' );
+        // CKEDITOR.replace( 'tinymce' );
+        // CKEDITOR.replace( 'tinymce-nearby' );
 
         {{--$(function () {--}}
         {{--    tinymce.init({--}}

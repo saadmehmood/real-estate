@@ -48,7 +48,7 @@
                                     @foreach($properties as $key => $property)
                                     <div class="grey lighten-4">
                                         <a href="{{route('property.show',$property->slug)}}" target="_blank" class="border-bottom display-block p-15  grey-text-d-2">
-                                            {{ ++$key }}. {{ str_limit($property->title, 28) }}
+                                            {{ ++$key }}. {{ \Illuminate\Support\Str::limit($property->title, 28) }}
                                             <span class="right">&dollar;{{ $property->price }}</span>
                                         </a>
                                     </div>
@@ -66,7 +66,7 @@
                                     <div class="grey lighten-4">
                                         <a href="" class="border-bottom display-block p-15 grey-text-d-2">
                                             <strong>{{ strtok($message->name, " ") }}:</strong>
-                                            <span class="p-l-5">{{ str_limit($message->message, 25) }}</span>
+                                            <span class="p-l-5">{{ \Illuminate\Support\Str::limit($message->message, 25) }}</span>
                                         </a>
                                     </div>
                                     @endforeach

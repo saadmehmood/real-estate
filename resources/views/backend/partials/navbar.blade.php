@@ -31,7 +31,7 @@
                                                 <i class="material-icons">message</i>
                                             </div>
                                             <div class="menu-info">
-                                                <h4>{{ str_limit($message->message,30) }}</h4>
+                                                <h4>{{ \Illuminate\Support\Str::limit($message->message,30) }}</h4>
                                                 <p>
                                                     <i class="material-icons">access_time</i>
                                                     {{ $message->created_at->diffForHumans() }}

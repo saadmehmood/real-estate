@@ -45,6 +45,10 @@
                         <a href="{{ route('contact') }}">Contact</a>
                     </li>
 
+                    <li class="{{ Request::is('properties*') ? 'active' : '' }}">
+                        <a href="{{ route('admin.properties.create') }}">Add Property</a>
+                    </li>
+
                     @guest
                         <li><a href="{{ route('login') }}"><i class="material-icons">input</i></a></li>
                         <li><a href="{{ route('register') }}"><i class="material-icons">person_add</i></a></li>
