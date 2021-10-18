@@ -7,7 +7,7 @@
                     @if(isset($navbarsettings[0]) && $navbarsettings[0]['name'])
                         {{ $navbarsettings[0]['name'] }}
                     @else
-                        Real State
+                        {{ config('app.name', 'Muskan Properties') }}
                     @endif
                         <img class="left" src="{{ asset('frontend/images/logo.png') }}" style="width: 60px;">
 {{--                    <i class="material-icons left">location_city</i>--}}
