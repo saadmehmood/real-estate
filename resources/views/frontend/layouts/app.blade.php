@@ -87,6 +87,7 @@
 
         <script>
         $(document).ready(function(){
+            $('.collapsible').collapsible();
             $('.sidenav').sidenav();
 
             $('.carousel.carousel-slider').carousel({

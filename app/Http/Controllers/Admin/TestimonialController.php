@@ -8,7 +8,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 use Intervention\Image\Facades\Image;
-use App\Testimonial;
+use App\Models\Testimonial;
 use Carbon\Carbon;
 use Toastr;
 

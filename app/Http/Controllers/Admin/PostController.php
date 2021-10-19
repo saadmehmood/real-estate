@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Post;
-use App\Category;
-use App\Tag;
-use App\Comment;
+use App\Models\Post;
+use App\Models\Category;
+use App\Models\Tag;
+use App\Models\Comment;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;

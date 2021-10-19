@@ -6,8 +6,8 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Storage;
 use Intervention\Image\Facades\Image;
-use App\Gallery;
-use App\Album;
+use App\Models\Gallery;
+use App\Models\Album;
 use Carbon\Carbon;
 use Toastr;
 

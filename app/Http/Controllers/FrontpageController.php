@@ -3,11 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Testimonial;
-use App\Property;
-use App\Service;
-use App\Slider;
-use App\Post;
+use App\Models\Testimonial;
+use App\Models\Property;
+use App\Models\Service;
+use App\Models\Slider;
+use App\Models\Post;
 
 class FrontpageController extends Controller
 {

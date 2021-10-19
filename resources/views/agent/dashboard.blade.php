@@ -49,7 +49,7 @@
                                     <div class="grey lighten-4">
                                         <a href="{{route('property.show',$property->slug)}}" target="_blank" class="border-bottom display-block p-15  grey-text-d-2">
                                             {{ ++$key }}. {{ \Illuminate\Support\Str::limit($property->title, 28) }}
-                                            <span class="right">&dollar;{{ $property->price }}</span>
+                                            <span class="right">PKR {{ $property->price }}</span>
                                         </a>
                                     </div>
                                     @endforeach

@@ -1,14 +1,14 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Category extends Model
+class Tag extends Model
 {
-    protected $fillable = ['name','slug','image'];
+    protected $fillable = ['name','slug'];
 
-
+    
     public function posts()
     {
         return $this->belongsToMany(Post::class)->withTimestamps();

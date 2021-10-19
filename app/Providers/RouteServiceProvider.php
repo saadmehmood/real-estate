@@ -5,8 +5,8 @@ namespace App\Providers;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 
-use App\Property;
-use App\Post;
+use App\Models\Property;
+use App\Models\Post;
 
 class RouteServiceProvider extends ServiceProvider
 {

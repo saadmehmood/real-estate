@@ -2,7 +2,7 @@
 
 namespace App\Services;
 
-use App\Property;
+use App\Models\Property;
 use Carbon\Carbon;
 use Illuminate\Mail\Mailable;
 use Illuminate\Support\Facades\Auth;
@@ -63,7 +63,6 @@ class PropertyService extends Mailable
             $property->agent_id = Auth::id();
         }
         $property->title    = $request->title;
-        $property->slug     = $slug;
         $property->price    = $request->price;
         $property->purpose  = $request->purpose;
         $property->type     = $request->type;
@@ -88,7 +87,7 @@ class PropertyService extends Mailable
         $property->nearby               = $request->nearby;
         $property->save();
 
-        $property->features()->attach($request->features);
+        $property->features()->sync($request->features);
 
 
         $gallery = $request->file('gallaryimage');

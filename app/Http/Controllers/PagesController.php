@@ -7,13 +7,13 @@ use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\Contact;
 
-use App\Property;
-use App\Message;
-use App\Gallery;
-use App\Comment;
-use App\Rating;
-use App\Post;
-use App\User;
+use App\Models\Property;
+use App\Models\Message;
+use App\Models\Gallery;
+use App\Models\Comment;
+use App\Models\Rating;
+use App\Models\Post;
+use App\Models\User;
 
 use Carbon\Carbon;
 use Auth;

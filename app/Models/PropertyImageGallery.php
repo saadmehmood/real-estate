@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -10,7 +10,7 @@ class PropertyImageGallery extends Model
 
     public function property()
     {
-        return $this->belongsTo('App\Property');
+        return $this->belongsTo('App\Models\Property');
     }
 }
 

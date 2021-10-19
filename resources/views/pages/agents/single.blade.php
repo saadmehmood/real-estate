@@ -42,7 +42,7 @@
                                         <a href="{{ route('property.show',$property->slug) }}">{{ \Illuminate\Support\Str::limit($property->title,25) }}</a>
                                     </span>
                                     <h5>
-                                        &dollar;{{ $property->price }}
+                                        PKR {{ $property->price }}
                                         <small class="right p-r-10">{{ $property->type }} for {{ $property->purpose }}</small>
                                     </h5>
                                 </div>

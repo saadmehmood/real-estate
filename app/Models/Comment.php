@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -28,6 +28,6 @@ class Comment extends Model
 
     public function children()
     {
-        return $this->hasMany('App\Comment', 'parent_id', 'id');
+        return $this->hasMany('App\Models\Comment', 'parent_id', 'id');
     }
 }

@@ -7,9 +7,9 @@ use App\Services\PropertyService;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Property;
-use App\Feature;
-use App\PropertyImageGallery;
+use App\Models\Property;
+use App\Models\Feature;
+use App\Models\PropertyImageGallery;
 
 use Illuminate\Support\Facades\Storage;
 use Toastr;

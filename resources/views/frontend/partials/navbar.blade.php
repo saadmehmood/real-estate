@@ -116,6 +116,10 @@
             <a href="{{ route('blog') }}">Blog</a>
         </li>
 
+        <li class="{{ Request::is('properties*') ? 'active' : '' }}">
+            <a href="{{ route('admin.properties.create') }}">Add Property</a>
+        </li>
+
         <li class="{{ Request::is('contact') ? 'active' : '' }}">
             <a href="{{ route('contact') }}">Contact</a>
         </li>

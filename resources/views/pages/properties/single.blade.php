@@ -76,7 +76,7 @@
                 </div>
                 <div class="col s12 m4">
                     <div>
-                        <h4 class="left">${{ $property->price }}</h4>
+                        <h4 class="left">PKR {{ $property->price }}</h4>
                         <button type="button" class="btn btn-small m-t-25 right disabled b-r-20"> For {{ $property->purpose }}</button>
                     </div>
                 </div>
@@ -323,7 +323,7 @@
                                                 <div class="card-stacked">
                                                     <div class="p-l-10 p-r-10 indigo-text">
                                                         <h6 title="{{$property_related->title}}">{{ \Illuminate\Support\Str::limit( $property_related->title, 18 ) }}</h6>
-                                                        <strong>&dollar;{{$property_related->price}}</strong>
+                                                        <strong>PKR {{$property_related->price}}</strong>
                                                     </div>
                                                 </div>
                                             </div>

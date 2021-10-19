@@ -6,12 +6,12 @@ use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Facades\Auth;
 
-use App\Property;
-use App\Post;
-use App\Tag;
-use App\Category;
-use App\Setting;
-use App\Message;
+use App\Models\Property;
+use App\Models\Post;
+use App\Models\Tag;
+use App\Models\Category;
+use App\Models\Setting;
+use App\Models\Message;
 
 class AppServiceProvider extends ServiceProvider
 {
